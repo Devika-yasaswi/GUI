@@ -1,0 +1,47 @@
+from tkinter import *
+from tkinter import messagebox
+root=Tk()
+root.title("Application Form")
+Label(root,text="Application Form",font=("Times new Roman",25,"bold")).grid(row=3,column=10,sticky='w')
+#Fixing size of the page
+root.geometry("800x800")
+#creating a label Called Candidate's name
+Label(root,text="Candidate's Name",font=("Times new Roman",20)).grid(row=4,column=0)
+a=Entry(root,width=25,textvariable=cname).grid(row=4,column=20)
+#creating a label Called Father's name
+Label(root,text="Father's Name",font=("Times new Roman",20)).grid(row=5,column=0,sticky='w')
+fname=Entry(root,width=25).grid(row=5,column=20)
+#creating Gender
+Label(root,text="Gender",font=("Times new Roman",20)).grid(row=6,column=0,sticky='w')
+Radiobutton(root,text="Female",font=("Times new Roman",20),value=1).grid(row=6,column=20,sticky='w')
+Radiobutton(root,text="Male",font=("Times new Roman",20),value=2).grid(row=7,column=20,sticky='w')
+#Date of Birth
+Label(root,text="Date of Birth",font=("Times new Roman",20)).grid(row=8,column=0,sticky='w')
+dob=Entry(root,width=25).grid (row=8,column=20,sticky='w')
+#Nationality
+Label(root,text="Nationality",font=("Times new Roman",20)).grid(row=9,column=0,sticky='w')
+nation= Entry(root,width=25).grid (row=9,column=20,sticky='w')
+#Marital Status
+Label(root,text="Marital Status",font=("Times new Roman",20)).grid(row=10,column=0,sticky='w')
+Radiobutton(root,text="Unmarried",font=("Times new Roman",20),value=3).grid(row=10,column=20,sticky='w')
+Radiobutton(root,text="Married",font=("Times new Roman",20),value=4).grid(row=11,column=20,sticky='w')
+#Mobile Number
+Label(root,text="Mobile Number",font=("Times new Roman",20)).grid(row=12,column=0,sticky='w')
+Entry(root,width=25).grid(row=12,column=20)
+#Email address
+Label(root,text="E-mail address",font=("Times new Roman",20)).grid(row=13,column=0,sticky='w')
+Entry(root,width=25).grid(row=13,column=20)
+#submit functionality
+def submit1():
+    messagebox.showinfo("status","Confirm submission")
+#submit button
+Button(root,text="Submit",activebackground="#8F00FF",bg="#0000FF",fg="White",font=("Times new Roman",20),command=submit1).grid(row=20,column=20)
+#Reset functionality
+def Reset1():
+    messagebox.showinfo("status","Reset everything")
+    delete()
+def delete():
+    cname=''
+#Reset button
+Button(root,text="Reset",activebackground="#8F00FF",bg="#0000FF",fg="White",font=("Times new Roman",20),command=Reset1).grid(row=20,column=10)
+root.mainloop()
